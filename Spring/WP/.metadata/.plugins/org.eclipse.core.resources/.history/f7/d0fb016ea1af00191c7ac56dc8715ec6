@@ -1,0 +1,5 @@
+package com.hsbc.daos;
+
+public interface EmployeesDao {
+
+}

@@ -1,0 +1,21 @@
+package ProxyProject;
+import java.util.Scanner;
+
+public class Client2 {
+
+	public static void main(String[] args) throws InstantiationException, IllegalAccessException, ClassNotFoundException {
+		//Enter full pacckagename.classname
+		//ProxyProject.Dog
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Which Animal");
+		String animalType = sc.next();
+		Animal animal;
+		
+		//animal = (Animal)Class.forName(animalType).newInstance(animalType);
+		animal = ObjectFactory.getInstance(animalType);
+		animal.makeNoise();
+		
+	
+	}
+
+}

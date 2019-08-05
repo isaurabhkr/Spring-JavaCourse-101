@@ -1,0 +1,12 @@
+package com.hsbc.dao.impl;
+
+import com.hsbc.daos.StudentDao;
+
+public class StudentdaoImpl implements StudentDao {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

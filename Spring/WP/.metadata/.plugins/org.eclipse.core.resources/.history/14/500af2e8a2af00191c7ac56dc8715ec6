@@ -1,0 +1,66 @@
+package com.hsbc.models;
+
+public class Employees {
+	private int employeeId;
+	private String employeeName;
+	private int salary;
+	private String address;
+	private int contactNum;
+	private String dept;
+	public Employees(int employeeId, String employeeName, int salary, String address, int contactNum, String dept) {
+		
+		this.employeeId = employeeId;
+		this.employeeName = employeeName;
+		this.salary = salary;
+		this.address = address;
+		this.contactNum = contactNum;
+		this.dept = dept;
+	}
+	
+	
+	@Override
+	public String toString() {
+		return "Employees [employeeId=" + employeeId + ", employeeName=" + employeeName + ", salary=" + salary
+				+ ", address=" + address + ", contactNum=" + contactNum + ", dept=" + dept + "]";
+	}
+
+
+	public int getEmployeeId() {
+		return employeeId;
+	}
+	public void setEmployeeId(int employeeId) {
+		this.employeeId = employeeId;
+	}
+	public String getEmployeeName() {
+		return employeeName;
+	}
+	public void setEmployeeName(String employeeName) {
+		this.employeeName = employeeName;
+	}
+	public int getSalary() {
+		return salary;
+	}
+	public void setSalary(int salary) {
+		this.salary = salary;
+	}
+	public String getAddress() {
+		return address;
+	}
+	public void setAddress(String address) {
+		this.address = address;
+	}
+	public int getContactNum() {
+		return contactNum;
+	}
+	public void setContactNum(int contactNum) {
+		this.contactNum = contactNum;
+	}
+	public String getDept() {
+		return dept;
+	}
+	public void setDept(String dept) {
+		this.dept = dept;
+	}
+	
+	
+}

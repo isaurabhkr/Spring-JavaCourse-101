@@ -1,0 +1,176 @@
+package com.hsbc.dao.impl;
+import java.sql.Connection;
+import java.sql.DatabaseMetaData;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.hsbc.daos.StudentDao;
+import com.hsbc.models.Student;
+
+public class StudentdaoImpl implements StudentDao {
+	private final static String conURL="jdbc:derby:C:\\Work\\HSBC\\Derby\\mydB;create=true";
+	private Connection conn=null;
+	public StudentdaoImpl() {
+		try {
+			Class.forName("org.apache.derby.jdbc.EmbeddedDriver");
+			System.out.println("++++ DB Driver LOADED ++++");
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+
+	}
+	@Override
+	public void createConnection() {
+		try {
+			conn=DriverManager.getConnection(conURL);
+			System.out.println("++++ Connected To DB ++++");
+			DatabaseMetaData dmd=conn.getMetaData();
+			//System.out.println(dmd.getDatabaseProductName());
+			//System.out.println(dmd.getDatabaseProductVersion());
+			//System.out.println(dmd.getDriverName());
+		/*
+			dmd.getMaxRowSize();
+			dmd.getMaxStatements();
+			dmd.getMaxStatementLength();
+			dmd.getMaxTablesinSelect();
+			dmd.getMaxColumsinSelect();
+			dmd.getMaxColumsInTable(); 
+		 */
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+
+	@Override
+	public void addStudent(Student student) {
+		/*String sql="insert into student values("+student.getRollNo()+",'"+
+												student.getFirstName()+"','"+
+												student.getLastName()+"',"+
+												student.getPercent()+")";*/
+		String sql="insert into student values(?,?,?,?)";
+		createConnection();
+		try {
+			//Statement stmt=conn.createStatement();
+			PreparedStatement stmt=conn.prepareStatement(sql);
+			//System.out.println("++++ Statement Created ++++");
+			stmt.clearParameters();
+			stmt.setInt(1, student.getRollNo());
+			stmt.setString(2, student.getFirstName());
+			stmt.setString(3, student.getLastName());
+			stmt.setDouble(4, student.getPercent());
+			int cnt=stmt.executeUpdate();
+			if(cnt!=0) {
+				System.out.println("++++ Inserted "+student+" To TABLE ++++");
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			closeConnection();
+		}
+	}
+
+	@Override
+	public Student getStudent(int rollNo) {
+		Student student=null;
+		//String sql="select * from student where rollNo = "+rollNo;
+		String sql="select * from student where rollNo = ?";
+		createConnection();
+		try {
+			//Statement stmt=conn.createStatement();
+			PreparedStatement stmt=conn.prepareStatement(sql);
+			stmt.clearParameters();
+			stmt.setInt(1, rollNo);
+			ResultSet rs=stmt.executeQuery();
+			if(rs.next()) {
+				student=new Student(rs.getInt("rollNo"),rs.getString("firstName"),
+						rs.getString("lastName"),rs.getDouble("percent"));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			closeConnection();
+		}
+		return student;
+	}
+
+	@Override
+	public List<Student> getAllStudents() {
+		String sql="select * from student";
+		ArrayList<Student> studentsList=new ArrayList<>();
+		createConnection();
+		try {
+			Statement stmt=conn.createStatement();
+			ResultSet rs=stmt.executeQuery(sql);
+			while(rs.next()) {
+			studentsList.add(new Student(rs.getInt("rollNo"),rs.getString("firstName"),
+					rs.getString("lastName"),rs.getDouble("percent")));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			closeConnection();
+		}
+		
+		return studentsList;
+	}
+
+	@Override
+	public void updateStudent(Student student) {
+		/*String sql="update student set firstName = '"+student.getFirstName()+"',"+
+					" lastName = '"+student.getLastName()+"', percent = "+
+					student.getPercent()+" where rollNo = "+student.getRollNo();*/
+		String sql="update student set firstName = ? , lastName = ? , percent = ?"+
+					"where rollNo = ?";
+		createConnection();
+		try {
+			//Statement stmt=conn.createStatement();
+			PreparedStatement stmt=conn.prepareStatement(sql);
+			stmt.clearParameters();
+			stmt.setString(1, student.getFirstName());
+			stmt.setString(2, student.getLastName());
+			stmt.setDouble(3, student.getPercent());
+			stmt.setInt(4, student.getRollNo());
+			int cnt=stmt.executeUpdate();
+			if(cnt!=0) {
+				System.out.println("++++ Updated Student TABLE ++++");
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			closeConnection();
+		}
+	}
+	@Override
+	public void deleteStudent(int rollNo) {
+		String sql="delete from student where rollNo = "+rollNo;
+		createConnection();
+		try {
+			Statement stmt=conn.createStatement();
+			int cnt=stmt.executeUpdate(sql);
+			if(cnt!=0) {
+				System.out.println("++++ Deleted The Record with rollNo "+rollNo+" ++++");
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			closeConnection();
+		}
+	}
+	@Override
+	public void closeConnection() {
+		if(conn!=null) {
+			try {
+				//DriverManager.getConnection(conURL+";shutdown=true");
+				conn.close();
+				System.out.println("++++ DB Connection CLOSED ++++");
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+}

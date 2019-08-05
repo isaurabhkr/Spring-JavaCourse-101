@@ -1,0 +1,44 @@
+package javaio;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class TestStudent {
+
+	public static void main(String[] args) throws NumberFormatException, IOException {
+		// TODO Auto-generated method stub
+		    Student[] ss= new Student[3];
+		    for(int i=0;i<3;i++) {
+			BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+			System.out.println("Enter the roll no  ");
+			int rollNo=Integer.parseInt(br.readLine());
+			System.out.println("Enter the first Name ");
+			String firstName=br.readLine();
+			System.out.println("Enter the last Name ");
+			String lastName=br.readLine();
+			System.out.println("Percent ");
+			double per=Double.parseDouble(br.readLine());
+			Student s= new Student(rollNo,firstName,lastName,per);
+			ss[i]=s;
+		    }
+			//System.out.println(s);
+			
+			FileWriter fw= new FileWriter("data.txt");
+			for(int i=0;i<3;i++) {
+			fw.write(ss[i].toString());
+			}
+			fw.close();
+			FileReader f = new FileReader("data.txt");
+			BufferedReader br= new BufferedReader(f);
+			String str=" ";
+			while((str=br.readLine())!=null)
+			{
+				System.out.println(str);
+			}
+	
+			}
+
+}

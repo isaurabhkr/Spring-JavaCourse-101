@@ -1,0 +1,45 @@
+package com.hsbc.services.impl;
+
+import java.util.List;
+
+import com.hsbc.daos.StudentDao;
+import com.hsbc.models.Student;
+import com.hsbc.services.StudentService;
+import com.hsbc.dao.impl.*;
+public class StudentServiceImpl implements StudentService {
+	private StudentDao studentDao;
+	
+	public StudentServiceImpl() {
+		studentDao=new StudentdaoImpl();
+	}
+	
+	@Override
+	public void create(Student student) {
+		studentDao.addStudent(student);
+		
+	}
+
+	@Override
+	public Student get(int rollNo) {
+		return studentDao.getStudent(rollNo);
+		
+	}
+
+	@Override
+	public List<Student> getAll() {
+		return studentDao.getAllStudents();
+	}
+
+	@Override
+	public void modify(Student student) {
+		studentDao.updateStudent(student);
+		
+	}
+
+	@Override
+	public void remove(int rollNo) {
+		studentDao.deleteStudent(rollNo);
+		
+	}
+
+}

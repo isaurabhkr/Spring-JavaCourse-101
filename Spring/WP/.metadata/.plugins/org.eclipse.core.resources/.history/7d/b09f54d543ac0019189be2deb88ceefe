@@ -1,0 +1,10 @@
+package javaio;
+
+public class fileCopy {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

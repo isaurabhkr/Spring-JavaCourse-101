@@ -1,0 +1,49 @@
+package com.test;
+import threads.*;
+public class MainThread {
+	/*
+	public static void main(String[] args) {
+		CounterThread t1=new CounterThread("THREAD-01", 7);
+		CounterThread t2=new CounterThread("THREAD-02", 7);
+		System.out.println("Current Thread "+ Thread.currentThread());
+		for(int i=0;i<5;i++) {
+			System.out.println(Thread.currentThread().getName()+":: "+i);
+			try {
+				Thread.sleep(1000);
+			} catch(InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
+		
+		System.out.println(t1.getName()+" :: "+t1.isAlive());
+		System.out.println(t2.getName()+" :: "+t2.isAlive());
+		System.out.println("Main thread terminated");
+	}*/
+	public static void main(String[] args) {
+		CounterThread t1=new CounterThread("THREAD-01", 1);
+		CounterThread t2=new CounterThread("THREAD-02", 10);
+		System.out.println("Current Thread "+ Thread.currentThread());
+		for(int i=0;i<5;i++) {
+			System.out.println(Thread.currentThread().getName()+":: "+i);
+			try {
+				Thread.sleep(1000);
+			} catch(InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
+		
+		System.out.println(t1.getName()+" :: "+t1.t.isAlive());
+		System.out.println(t2.getName()+" :: "+t2.t.isAlive());
+		try {
+			//main will join the other threads after they terminate
+		t1.t.join();
+		t2.t.join();
+		}
+		catch(InterruptedException e)
+		{
+		e.printStackTrace();
+		}
+		
+		System.out.println("Main thread terminated");
+	}
+}

@@ -1,0 +1,5 @@
+package ProxyProject;
+
+public class Dog extends Animal {
+
+}

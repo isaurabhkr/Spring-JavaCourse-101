@@ -1,0 +1,11 @@
+package com.resources;
+
+import java.util.ResourceBundle;
+
+public class TestResourceBundle {
+
+	public static void main(String[] args) {
+		ResourceBundle bundle = ResourceBundle.getBundle("resources",Locale.US)
+	}
+
+}

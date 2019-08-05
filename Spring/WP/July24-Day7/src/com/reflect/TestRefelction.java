@@ -1,0 +1,80 @@
+package com.reflect;
+
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.text.DateFormat.Field;
+import java.util.Arrays;
+
+public class TestRefelction {
+
+	public static void main(String[] args) throws NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, NoSuchFieldException {
+		Class rental = RentCar.class;
+		//get absolute name of class
+		String absName=rental.getName();
+		System.out.println("Absolute Name:: "+absName);
+		
+		//get simple name of class
+		String simpleName=rental.getSimpleName();
+		System.out.println("Simple name :: "+simpleName);
+		
+		//get packageName
+		Package pkg = rental.getPackage();
+		System.out.println("Package :: +pkg");
+		
+		//getall Constructors of the class
+		Constructor[] cons = rental.getConstructors();
+		System.out.println("Constuctors :: "+Arrays.toString(cons));
+		
+		//get specific constructors 
+		Constructor cons2 = rental.getConstructor(Integer.TYPE);
+		System.out.println("Constuctors :: "+cons2);
+		
+		//crate and initializze obkjects using this constructor
+		RentCar car=(RentCar) cons2.newInstance(455);
+		
+		//getallMethods of the class including the super class
+		Method[] allMethods = rental.getMethods();
+		System.out.println("Methods are :: "+Arrays.toString(allMethods));
+		
+		for(Method m: allMethods)
+		{
+			System.out.println(m.getName());
+		}
+		
+		//get all methods of the class including the superclass method\
+		
+		Method[] declareMethod = rental.getDeclaredMethods();
+		System.out.println("Declared Methods ::"+Arrays.toString(declareMethod));
+		
+		for(Method a: declareMethod)
+			System.out.println(a.getName());
+		
+		
+		//get a method woth specific name and parameters
+		Method someMethod = rental.getMethod("computeRentalCost", new Class[] {Integer.TYPE});
+		System.out.println("Method is :: "+someMethod);
+		
+		
+		//Invoke this method
+		someMethod.invoke(car,4);
+		
+		//get all parameters of this method
+		Class[] paramTypes = someMethod.getParameterTypes();
+		System.out.println("Parameter types :: "+Arrays.toString(paramTypes));
+		
+		//get return tyope of this method
+		Class returnType=someMethod.getReturnType();
+		System.out.println("Return Type :: "+returnType);
+		
+		//get all field of the class
+		java.lang.reflect.Field[] fields =rental.getFields();
+		System.out.println("Public Fileds are :: "+fields);
+		
+		for(java.lang.reflect.Field f:fields) {
+			java.lang.reflect.Field field = rental.getField(f.getName());
+			System.out.println(field.getName()+" : "+f.getType());
+		}
+	}
+
+}

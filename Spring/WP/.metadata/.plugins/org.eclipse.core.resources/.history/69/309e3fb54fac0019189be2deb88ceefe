@@ -1,0 +1,10 @@
+package javaioExamples;
+
+public class FileQuesFour {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

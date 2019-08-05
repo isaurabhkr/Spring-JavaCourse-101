@@ -1,0 +1,22 @@
+package com.hsbc.test;
+
+import com.hsbc.models.Employees;
+import com.hsbc.services.EmployeeService;
+import com.hsbc.services.impl.EmployeeServiceImpl;
+
+public class TestEmployee {
+
+	public class TestEmployee {
+		public static void main(String[] args) {
+			EmployeeService employeeService = new EmployeeServiceImpl();
+			employeeService.create(new Employees(1,"Narendra",50000,"Ahmedabad",975984754,"Gumla"));
+			employeeService.create(new Employees(2,"Sarfaraj",50000,"Karanchi",975984754,"Sleep"));
+			employeeService.create(new Employees(3,"Imran",50000,"Islamabad",975984754,"MoneyCollection"));
+			employeeService.create(new Employees(4,"Donald",50000,"Washington",975984754,"Lies"));
+			
+			System.out.println(employeeService.get(1));
+			System.out.println(employeeService.get(2));
+			System.out.println(employeeService.get(3));
+			System.out.println(employeeService.get(4));
+		}
+	}

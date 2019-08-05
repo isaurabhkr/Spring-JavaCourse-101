@@ -1,0 +1,44 @@
+package com.test;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+import java.util.Scanner;
+
+import javaioExamples.InputErrorException;
+import javaioExamples.StudentAdd;
+public class TestStudentAdd {
+
+	public static void main(String[] args) throws InputErrorException, IOException {
+		//System.out.println("Creating a normal object");
+		StudentAdd s1 = new StudentAdd(1, "Narendra", 67, "Gandhinagar");
+		System.out.println(s1);
+		
+		StudentAdd s2 = new StudentAdd(2, null, 67, "Gandhinagar");
+		System.out.println(s2);
+		
+		StudentAdd s3 = new StudentAdd(3, "Rahul", 67, "Gandhinagar");
+		System.out.println(s3);
+		
+		System.out.println("Do you want to write data to a file: Enter 1 to continue");
+		Scanner in = new Scanner(System.in);
+		int choice = in.nextInt();
+		in.nextLine();
+		if(choice==1) {
+		File sfile=new File("StudentAddInfo.txt");
+		sfile.createNewFile();
+		FileOutputStream fos= new FileOutputStream("StudentAddInfo.txt");
+		ObjectOutputStream oos = new ObjectOutputStream(fos);
+		oos.writeObject(s1);
+		oos.writeObject(s2);
+		oos.writeObject(s3);
+		oos.flush();
+		oos.close();
+		}
+		else
+			 System.exit(0);
+		
+	}
+
+}

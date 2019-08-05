@@ -1,0 +1,33 @@
+package threads;
+
+public class CounterThread implements Runnable/*extends Thread*/{
+		public Thread t;
+		public CounterThread(String name, int priority) {
+			t=new Thread(this);
+			t.setName(name);
+			t.setPriority(priority);
+			System.out.println("Thread:: "+t);
+			t.start();
+			//after ob is created this starts/schedules the thread
+		}
+	
+		public void run() {
+		for(int i=0;i<20;i++)
+		{
+			System.out.println("CHILD THREAD"+t.getName()+" :: "+i);
+			try {
+				t.sleep(500);
+			}
+			catch(InterruptedException e) {
+					e.printStackTrace();
+					}
+			System.out.println("THREAD "+t.getName()+" is alive "+t.isAlive());
+			System.out.println("THREAD "+t.getName()+" Terminated ");
+		}
+	}
+
+		public String getName() {
+			// TODO Auto-generated method stub
+			return null;
+		}
+}

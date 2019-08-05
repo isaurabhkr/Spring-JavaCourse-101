@@ -1,0 +1,39 @@
+package collections;
+import java.util.*;
+public class TestHashMap {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		HashMap<Integer,Person> personMap=new HashMap<Integer, Person>();
+		Person p1=new Person(1,"Narendra","Modi",65);
+		Person p2=new Person(2,"Rahul","Gandhi",45);
+		Person p3=new Person(3,"Sushil","Modi",65);
+		Person p4=new Person(4,"Sonia","Gandhi",68);
+		personMap.put(p1.getId(),p1);
+		personMap.put(p2.getId(),p2);
+		personMap.put(p3.getId(),p3);
+		personMap.put(p4.getId(),p4);
+		
+		System.out.println("Normal Iterator");
+		Iterator<Integer> keyItr = personMap.keySet().iterator();
+		while(keyItr.hasNext()) {
+			int key = (int) keyItr.next();
+			Person person = (Person) personMap.get(key);
+			System.out.println(key+"  =>  "+person);
+			//System.out.println(personMap.getClass());
+		}
+		
+		System.out.println("Entry Iterator");
+		Iterator<HashMap.Entry<Integer,Person>> entryItr = personMap.entrySet()
+				.iterator();
+
+		while(entryItr.hasNext()) {
+			Map.Entry<Integer, Person> entry =entryItr.next();
+			System.out.println(entry);
+			System.out.println("KEY :: "+entry.getKey());
+			System.out.println("VALUE :: "+entry.getValue());
+		}
+	}
+
+
+}

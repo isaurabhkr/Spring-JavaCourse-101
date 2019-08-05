@@ -1,0 +1,7 @@
+package com.hsbc.services.impl;
+
+import com.hsbc.services.StudentService;
+
+public class StudentServiceImpl implements StudentService {
+
+}

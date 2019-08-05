@@ -1,0 +1,117 @@
+package com.hsbc.dao.impl;
+
+
+import java.sql.Connection;
+import java.sql.DatabaseMetaData;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.List;
+
+import com.hsbc.daos.StudentDao;
+import com.hsbc.models.Student;
+
+public class StudentdaoImpl implements StudentDao {
+	private final static String conUrl="jdbc:derby:C:\\Work\\HSBC\\Derby\\mydB;create=true";
+	private Connection conn=null;
+	 public StudentdaoImpl() {
+		try {
+			Class.forName("org.apache.derby.jdbc.EmbeddedDriver");
+			System.out.println("+++DB Driver Loaded");
+		} catch(ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+	}
+	@Override
+	public void createConnection() {
+		try {
+		conn = DriverManager.getConnection(conUrl);
+		System.out.println("Connected to DB++++");
+		DatabaseMetaData dmd =conn.getMetaData();
+		//System.out.println(dmd.getDatabaseProductName());
+		//System.out.println(dmd.getDatabaseProductVersion());
+		//System.out.println(dmd.getDriverName());
+		//System.out.println(dmd.getDriverVersion());
+		
+		
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+	}
+
+	@Override
+	public void addStudent(Student student) {
+		String sql="insert into student values("+student.getRollNo()+",'"+student.getFirstName()+"','"+student.getLastName()+"',"+student.getPercent()+")";	
+	
+		createConnection();
+		try {
+			Statement smt=conn.createStatement();
+			System.out.println("Statement Crated");
+			int cnt=smt.executeUpdate(sql);
+			if(cnt!=0) {
+				System.out.println("++++inserted "+student+ "To Table");
+			}
+		} catch(SQLException e) {
+			e.printStackTrace();
+		} finally
+		{
+			closeConnection();
+		}
+	
+	}
+
+	@Override
+	public Student getStudent(int rollNo) {
+		Student student =null;
+		String sql ="select * from student where rollNo= "+rollNo;
+		createConnection();
+		try {
+		Statement smt=conn.createStatement();
+		ResultSet rs=smt.executeQuery(sql);
+		if(rs.next()) {
+			student = new Student(rs.getInt("rollNo"),rs.getString("firstName"),rs.getString("lastName"),rs.getDouble("percent"));
+			//student = new Student(rs.getInt(1),rs.getString(2),rs.getString(3),rs.getDouble(4));
+		}
+		} catch(Exception e) {
+			e.printStackTrace();
+		} finally {
+			closeConnection();
+		}
+		return student;
+	}
+
+	@Override
+	public List<Student> getAllStudents() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void updateStudent(Student student) {
+		
+	}
+
+	@Override
+	public void deleteStudent(int rollNo) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void closeConnection() {
+		if(conn!=null) {
+			try {
+			//DriverManager.getConnection(conUrl+";shutdown=true");
+			conn.close();
+			System.out.println("++db connection close");
+			} catch(SQLException e) {
+				e.printStackTrace();
+			}
+			
+		
+	}
+
+}
+}

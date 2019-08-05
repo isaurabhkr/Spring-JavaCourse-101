@@ -1,0 +1,46 @@
+package com.reflect;
+
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.util.Arrays;
+
+public class TestRefelction {
+
+	public static void main(String[] args) throws NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException {
+		Class rental = RentCar.class;
+		//get absolute name of class
+		String absName=rental.getName();
+		System.out.println("Absolute Name:: "+absName);
+		
+		//get simple name of class
+		String simpleName=rental.getSimpleName();
+		System.out.println("Simple name :: "+simpleName);
+		
+		//get packageName
+		Package pkg = rental.getPackage();
+		System.out.println("Package :: +pkg");
+		
+		//getall Constructors of the class
+		Constructor[] cons = rental.getConstructors();
+		System.out.println("Constuctors :: "+Arrays.toString(cons));
+		
+		//get specific constructors 
+		Constructor cons2 = rental.getConstructor(Integer.TYPE);
+		System.out.println("Constuctors :: "+cons2);
+		
+		//crate and initializze obkjects using this constructor
+		RentCar car=(RentCar) cons2.newInstance(455);
+		
+		//getallMethods of the class including the super class
+		Method[] allMethods = rental.getMethods();
+		System.out.println("Methods are :: "+Arrays.toString(allMethods));
+		
+		for(Method m: allMethods)
+		{
+			System.out.println(m.getName());
+		}
+
+	}
+
+}

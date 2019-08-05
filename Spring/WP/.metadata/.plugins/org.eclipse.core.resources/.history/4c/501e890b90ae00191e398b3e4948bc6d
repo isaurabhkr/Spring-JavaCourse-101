@@ -1,0 +1,10 @@
+package com.date;
+
+public class SimpleDateFormat {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

@@ -1,0 +1,49 @@
+package javaio;
+
+import java.io.File;
+import java.util.Scanner;
+public class InputFiles {
+	
+	void createFilefromName()
+	{
+		Scanner in = new Scanner(System.in);
+		System.out.println("Enter the file Name you wanna create with extension");
+		String fileName = in.nextLine();
+		File file=new File(fileName);
+	}
+	public static void main(String[] args) {
+		Scanner in = new Scanner(System.in);
+		System.out.println("Enter the file Name you wanna create with extension");
+		String fileName = in.nextLine();
+		File file=new File(fileName);
+		if(file.exists())
+		{
+			System.out.println("A file with name "+fileName+" already exists kindly select 1 to overwrite it or 0 to enter a new name");
+			int choice = in.nextInt();
+			if(choice ==1) {
+				
+			}
+			else
+				createFilefromName();
+				
+		}
+		System.out.println("Exists:: "+file.exists());
+		System.out.println("is File:: "+file.isFile());
+		System.out.println("is Directory:: "+file.isDirectory());
+		System.out.println("Parent "+file.getParent());
+		System.out.println("Path "+file.getPath());
+		System.out.println("Abs Path "+file.getAbsolutePath());
+		//System.out.println("Len "+file.length()+" bytes");
+		
+		//list() return all the file names of the folder
+		String fileNames[]=file.list(new TextFileFilter("txt"));
+		for(String name: fileNames) {
+			System.out.println(name);
+		}
+		
+		File files[]=file.listFiles(new TextFileFilter("txt"));
+		for(File f: files) {
+			System.out.println(f.getName()+" : "+f.getAbsolutePath());
+		}
+	}
+}

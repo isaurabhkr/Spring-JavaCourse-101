@@ -1,0 +1,20 @@
+package collectionsTest;
+import java.util.*;
+import collections.*;
+public class TestProdcutHashMap {
+
+	public static void main(String[] args)
+	{
+		Product p1=new Product("P001","Maruti800");
+		Product p2=new Product("P002","MarutiZen");
+		Product p3=new Product("P003","MarutiEsteem");
+		Product p4=new Product("P004","JeepCompass");
+		Product p5=new Product("P005","RenaultDuster");
+		Product p6=new Product("P006","BugatiCheron");
+		Product p7=new Product("P007","BugatiVeron");
+		Product p8=new Product("P008","MarutiWagonR");
+		Product p9=new Product("P009","LandRover");
+		Product p10=new Product("P010","HondaCity");
+	}
+	
+}

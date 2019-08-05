@@ -1,0 +1,24 @@
+package threads;
+
+public class CounterThread extends Thread{
+		public CounterThread(String name, int priority) {
+			this.setName(name);
+			this.setPriority(priority);
+			System.out.println("Thread:: "+this);
+		}
+	
+		public void run() {
+		for(int i=0;i<20;i++)
+		{
+			System.out.println("CHILD THREAD"+this.getName()+" :: "+i);
+			try {
+				Thread.sleep(500);
+			}
+			catch(InterruptedException e) {
+					e.printStackTrace();
+					}
+			System.out.println("THREAD "+this.getName()+" is alive "+this.isAlive());
+			System.out.println("THREAD "+this.getName()+" Terminated ");
+		}
+	}
+}

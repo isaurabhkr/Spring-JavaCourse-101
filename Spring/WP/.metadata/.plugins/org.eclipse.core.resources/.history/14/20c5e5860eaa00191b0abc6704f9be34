@@ -1,0 +1,17 @@
+package javaio;
+
+import java.io.File;
+
+public class fileInfo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		File file=new File("data.txt");
+		System.out.println("is File:: "+file.isFile());
+	}
+
+
+
+	}
+
+

@@ -1,0 +1,37 @@
+package javaio;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Scanner;
+
+public class fileCopy {
+
+	public static void main(String[] args) throws IOException {
+		
+		Scanner in = new Scanner(System.in);
+		System.out.println("Enter the source file name with extension");
+		String sourceName = in.nextLine();
+		File sfile=new File(sourceName);
+		System.out.println("Enter the destination file name with extension");
+		String destinationName = in.nextLine();
+		File dfile= new File(destinationName);
+		FileReader fr = new FileReader(sourceName);
+		BufferedReader br = new BufferedReader(fr);
+		FileWriter fw = new FileWriter(destinationName, true);
+		String s;
+
+		while ((s = br.readLine()) != null) { // read a line
+			fw.write(s); // write to output file
+			fw.flush();
+		}
+		br.close();
+		fw.close();
+        System.out.println("file copied");
+
+	}
+
+}

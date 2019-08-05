@@ -1,0 +1,12 @@
+package ProxyProject;
+
+public class ObjectFactory {
+	
+	public static Animal getInstance(String animalType)
+	{
+		//Identify the name of the class
+		//Create Instance of Proxy for Animal
+		//Write Interceptor method
+	}
+
+}

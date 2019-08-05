@@ -1,0 +1,14 @@
+package com.date;
+
+import java.util.Date;
+
+public class SimpleDateFormat {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		SimpleDateFormat sdf = new SimpleDateFormat();
+		String date = sdf.format(new Date()); 
+		System.out.println(date); //15/10/2013
+	}
+
+}

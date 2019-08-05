@@ -1,0 +1,31 @@
+package threads;
+
+public class DisplayRhymes {
+	/*public synchronized void printRhymes(String rhyme) {
+		String words[]=rhyme.split(",");
+		
+		for(String word:words) {
+			System.out.println(word);
+			try {
+				Thread.sleep(1000);
+			} catch(InterruptedException e) {
+				e.printStackTrace();
+			}
+			
+		}
+	}*/
+	
+	public void printRhymes(String rhyme) {
+		String words[]=rhyme.split(",");
+		
+		for(String word:words) {
+			System.out.println(word);
+			try {
+				Thread.sleep(1000);
+			} catch(InterruptedException e) {
+				e.printStackTrace();
+			}
+			
+		}
+	}
+}

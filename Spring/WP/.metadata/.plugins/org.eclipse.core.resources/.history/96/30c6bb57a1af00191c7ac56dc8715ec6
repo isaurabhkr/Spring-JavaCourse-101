@@ -1,0 +1,5 @@
+package com.hsbc.dao.impl;
+
+public class EmployeeDaoImpl {
+
+}
