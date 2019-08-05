@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <!--meta charset="utf-8"-->
+    <title> Demo form Validation </title>
+  </head>
+  <body bgcolor="cyan">
+    <font size ="5">
+      <fieldset>
+
+
+      <form method="post" action="somefile.html">
+        <legend> User Information </legend>
+          Email :<input type="email" name="email" required="true" placeholder="you@yourcompany.com"> <br/>
+          Date :<input type="date" name="doj"><br/>
+          DOB :<input type="datetime-local" name="dob"><br/>
+          Age :<input type="number" name="age" min="5" max="40"><br/>
+          Month :<input type="month" name="month"><br/>
+          Week :<input type="week" name="week"><br/>
+          Range :<input type="range" name="range" value="1" min="1" max="10" step="2"><br/>
+          Color :<input type="color" name="color"><br/>
+          Search: <input type="search" name="mySearch"><br/>
+          URL :<input type="url" name="url"><br/>
+          Telephone: <input type="tel" name="usertel" required="true" placeholder="00-000-00000"><br/>
+
+          Book:
+            <input type="text" name="productlist" list="books">
+            <datalist id="books">
+            <option value="HTML 5 A Problem Solution Approach">
+            <option value="Complete Reference HTML">
+            <option value="HTML5 HandsOn">
+            <option value="HTML 5 in a nutshell">
+
+            </datalist>
+            <br/>
+            <input type="submit" value="submit">
+            </form>
+            </fieldset>
+  </body>
+</html>

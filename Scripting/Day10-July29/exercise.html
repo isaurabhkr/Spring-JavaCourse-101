@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <title> User Information </title>
+  </head>
+  <body>
+    <font size ="4">
+      <form method="post" action="demo3.html">
+        <fieldset>
+        <legend> User Information </legend>
+
+        <h4> Name :</h4>
+        <input type="text" name="name" required="true"> <br/>
+        <h4>Gender :</h4>
+        <br/>
+                    <input type="radio" name="Gender" value="Male"> Male<br/>
+                    <input type="radio" name="Gender" value="Female"> Female<br/>
+          Address :<textarea rows="5" cols="50"></textarea><br/>
+          Password :<input type="password" name="password"><br/>
+          <h4>
+          Hobbies :<br/>
+          </h4>
+                    <input type="radio" name="Hobbies" value="Travelling"> Travelling<br/>
+                    <input type="radio" name="Hobbies" value="Reading"> Reading<br/>
+                    <input type="radio" name="Hobbies" value="Reading"> Gardening<br/>
+
+          Qualification:
+            <input type="text" name="Qualificationlist" list="Qualification">
+            <datalist id="Qualification">
+            <option value="Graduation">
+            <option value="Post-Graduation">
+            <option value="High School">
+            <option value="Class 8">
+            </datalist>
+            <br/>
+            <input type="submit" name ="save" value="submit">
+            <input type="reset" value="clear">
+            <input type="button" value="print" onclick="window.print()">
+
+            </fieldset>
+            </form>
+
+  </body>
+</html>
