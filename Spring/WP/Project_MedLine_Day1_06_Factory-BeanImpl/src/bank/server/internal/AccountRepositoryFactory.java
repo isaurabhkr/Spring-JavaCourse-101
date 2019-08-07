@@ -1,0 +1,35 @@
+package bank.server.internal;
+
+import org.springframework.beans.factory.FactoryBean;
+
+import bank.iserver.internal.service.AccountRepository;
+import bank.server.Bank;
+
+public class AccountRepositoryFactory implements FactoryBean//TODO implements appropriate Factory bean
+{
+	public AccountRepository  getObject(){
+		System.out.println("Factory Method called for RepositoryFactory class");
+		//TODO return instance of repository
+		return new AccountRepositoryImpl();
+		
+	}
+
+	@Override
+	public Class<AccountRepository> getObjectType() {
+		// TODO Auto-generated method stub
+		System.out.println("GetObject Type called on AccountRepoFactory");
+		//TODO return class object of Repository
+		System.out.println(AccountRepository.class);
+		return AccountRepository.class;
+	}
+
+	@Override
+	public boolean isSingleton() {
+		// TODO Auto-generated method stub
+		//This method is called at least once during ApplicationContext creation.
+		System.out.println("Is Singleton Called on accountRepoFactory ");
+		return false;
+	}
+	
+
+}

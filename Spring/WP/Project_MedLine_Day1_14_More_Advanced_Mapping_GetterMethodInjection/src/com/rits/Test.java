@@ -1,0 +1,21 @@
+package com.rits;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class Test {
+
+	public static void main(String[] args) {
+		ApplicationContext ctx = new ClassPathXmlApplicationContext("application-config.xml");
+
+		MagicBox mbox =(MagicBox) ctx.getBean("magicbox");
+		//System.out.println(mbox);
+		System.out.println(mbox.showContents("Hie"));
+		Magician m =(Magician) ctx.getBean("magician");
+		//System.out.println(m);
+		m.perform(mbox,"hie");
+
+		
+	}
+
+}
