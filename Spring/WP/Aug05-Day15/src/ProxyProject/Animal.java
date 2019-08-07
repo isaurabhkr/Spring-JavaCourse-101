@@ -1,6 +1,9 @@
 package ProxyProject;
 
 public abstract interface Animal {
-	abstract public  void makeNoise();
 	
+	//put annotation
+	@Log
+	abstract public  void makeNoise();
+	abstract void  m1();
 }

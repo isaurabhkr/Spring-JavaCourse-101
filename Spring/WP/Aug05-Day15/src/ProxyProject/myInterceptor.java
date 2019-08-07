@@ -12,11 +12,18 @@ public class myInterceptor implements InvocationHandler {
 	}
 	@Override
 	public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-		Object obj = null;
-		System.out.println("Entry : method name" + method.getName());
+		//Object obj = null;
+		//System.out.println("Entry : method name" + method.getName());
+		Log log = method.getDeclaredAnnotation(Log.class);
+		System.out.println(log);
+		if(log !=null){
+			System.out.println("Entry : method name" + method.getName());
+		}
 		try
 		{
-			obj= method.invoke(animal, null);
+			//obj= method.invoke(animal, null);
+			 method.invoke(animal, null);
+			if(log!=null)
 			System.out.println("Exit : method name"+method.getName());
 		}
 		catch(Exception e) {

@@ -14,6 +14,7 @@ public class Client2 {
 		//animal = (Animal)Class.forName(animalType).newInstance(animalType);
 		animal = ObjectFactory.getInstance(animalType);
 		animal.makeNoise();
+		animal.m1();
 		
 	
 	}

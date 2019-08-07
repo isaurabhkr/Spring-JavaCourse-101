@@ -9,4 +9,9 @@ public class Tiger implements Animal {
 		//System.out.println("Method makeNoise exited in the Tiger class");
 
 	}
+
+	@Override
+	public void m1() {
+		System.out.println(" m1 tiger");		
+	}
 }
