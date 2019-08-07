@@ -1,8 +1,0 @@
-package ProxyProject;
-
-public class Dog extends Animal {
-	public void makeNoise() {
-		System.out.println("Method makeNoise entered in the Dog class");
-		System.out.println("Dog Barks");
-	}
-}

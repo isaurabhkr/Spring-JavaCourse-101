@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Move element &apos;app-config.xml&apos; to &apos;Aug060-Day16/src&apos;&#x0D;&#x0A;- Original project: &apos;Aug060-Day16&apos;&#x0D;&#x0A;- Destination element: &apos;Aug060-Day16/src&apos;&#x0D;&#x0A;- Original element: &apos;app-config.xml&apos;&#x0D;&#x0A;- Update references to refactored element" description="Move file" destination="/src" element1="src/com/hsbc/app-config.xml" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1565088205537" units="0" version="1.0"/>
-</session>

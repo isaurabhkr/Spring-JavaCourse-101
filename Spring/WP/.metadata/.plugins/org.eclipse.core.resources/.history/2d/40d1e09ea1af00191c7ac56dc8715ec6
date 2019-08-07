@@ -1,9 +1,0 @@
-package com.hsbc.daos;
-
-
-public interface EmployeesDao {
-	void createConnection();
-	void addEmployee(Employees employee);
-	Employees getEmployee(int employeeId);
-	void closeConnection();
-}

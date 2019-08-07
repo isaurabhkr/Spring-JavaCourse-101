@@ -1,7 +1,0 @@
-package collectionsTest;
-
-public class TestPhoneBookHashMap {
-	public static void main(String[] args) {
-		
-	}
-}

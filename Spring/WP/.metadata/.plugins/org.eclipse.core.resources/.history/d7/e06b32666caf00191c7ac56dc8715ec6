@@ -1,5 +1,0 @@
-package com.hsbc.daos;
-
-public interface StudentDao {
-
-}
