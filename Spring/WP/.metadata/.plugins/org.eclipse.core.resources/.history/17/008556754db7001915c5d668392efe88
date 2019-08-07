@@ -1,0 +1,12 @@
+package ProxyProject;
+
+public class Tiger implements Animal {
+	
+	public void makeNoise()
+	{
+		//System.out.println("Method makeNoise entered in the Tiger class");
+		System.out.println("Tiger roars");
+		//System.out.println("Method makeNoise exited in the Tiger class");
+
+	}
+}

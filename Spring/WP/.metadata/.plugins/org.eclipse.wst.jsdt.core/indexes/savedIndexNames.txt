@@ -1,0 +1,9 @@
+INDEX VERSION 1.4+C:\Work\HSBC\Spring\WP\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+1657330681.index
+2736974450.index
+3065565052.index
+3682423781.index
+2447796026.index
+1918552229.index
+2426916163.index
+551705688.index

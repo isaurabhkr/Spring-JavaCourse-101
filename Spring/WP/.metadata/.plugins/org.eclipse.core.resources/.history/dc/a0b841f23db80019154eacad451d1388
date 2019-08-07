@@ -1,0 +1,15 @@
+package com.hsbc;
+
+public class A {
+	private B b;
+
+	public A(B b) {
+		this.b = b;
+		System.out.println("A is created");
+	}
+	
+	public void m1() {
+		System.out.println("m1() of A is called");
+	}
+
+}

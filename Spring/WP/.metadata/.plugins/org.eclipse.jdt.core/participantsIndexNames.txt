@@ -1,0 +1,5 @@
+INDEX VERSION 1.131
+C:\Work\HSBC\Spring\WP\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2926312857.index
+\Test\src
+C:\Work\HSBC\Spring\WP\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2291061506.index
+\Web\src

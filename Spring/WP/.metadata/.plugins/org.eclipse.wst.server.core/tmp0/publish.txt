@@ -1,0 +1,5 @@
+#Tomcat publish data
+#Tue Aug 06 13:16:24 IST 2019
+org.eclipse.jst.jee.server\:Test=C\:\\sts-bundle\\pivotal-tc-server\\instances\\base-instance\\wtpwebapps\\Test
+org.eclipse.jst.jee.server\:Web=C\:\\sts-bundle\\pivotal-tc-server\\instances\\base-instance\\wtpwebapps\\Web
+org.eclipse.jst.jee.server\:GoodsteamProject=C\:\\sts-bundle\\pivotal-tc-server\\instances\\base-instance\\wtpwebapps\\GoodsteamProject

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Please Register Feedback</title>
+</head>
+<body>
+<h2 align ="center"> Register your customer feedback about out Pressure Cooker by clicking on one of the below:</h2>
+
+<form action="handlein" method="post">
+<input type=submit name = "in1" value="Very Poor(1)">
+<input type=submit name ="in1" value="Poor(2)">
+<input type=submit name ="in1" value="Average(3)">
+<input type=submit name="in1" value="Good(4)">
+<input type=submit name ="in1" value="Excellent(5)">
+</form>
+</body>
+</html>

@@ -1,0 +1,10 @@
+package GetProject;
+
+public class CLassD {
+
+	public CLassD() {
+		System.out.println("D");
+		// TODO Auto-generated constructor stub
+	}
+
+}

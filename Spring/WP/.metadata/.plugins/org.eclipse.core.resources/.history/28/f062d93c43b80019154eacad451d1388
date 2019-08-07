@@ -1,0 +1,14 @@
+package bank.server.internal;
+
+import bank.server.Bank;
+
+public class TestBank {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Bank b = new Bank(1000,1);
+		b.withdraw(100, 1)
+
+	}
+
+}

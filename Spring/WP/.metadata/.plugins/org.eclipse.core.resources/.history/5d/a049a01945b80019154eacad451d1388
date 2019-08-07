@@ -1,0 +1,16 @@
+package bank.server.internal;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import bank.server.Bank;
+
+public class TestBank {
+
+	public static void main(String[] args) {
+		ApplicationContext ctx = new ClassPathXmlApplicationContext("application-config.xml");
+		Bank b =(Bank) ctx.getBean("bankService");
+		b.withdraw(50, 1234)
+	}
+
+}

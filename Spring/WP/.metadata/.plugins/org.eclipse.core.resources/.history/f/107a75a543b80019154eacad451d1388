@@ -1,0 +1,13 @@
+package bank.server.internal;
+
+public class TestBank {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		AccountRepositoryImpl a = new AccountRepositoryImpl();
+		BankImpl b = BankImpl(a);
+		b.withdraw(100, 1)
+
+	}
+
+}

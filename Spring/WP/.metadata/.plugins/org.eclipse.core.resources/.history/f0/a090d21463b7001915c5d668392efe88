@@ -1,0 +1,11 @@
+package GetProject;
+
+public class ClassC {
+	CLassD d;
+
+	public ClassC(ClassD d) {
+		super();
+		this.d = d;
+	}
+	
+}

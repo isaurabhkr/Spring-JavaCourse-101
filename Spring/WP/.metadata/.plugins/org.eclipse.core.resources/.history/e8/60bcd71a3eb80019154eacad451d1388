@@ -1,0 +1,32 @@
+package com.hsbc;
+
+public class A {
+	private B b;
+	private int i;
+
+	public A(B b) {
+		this.b = b;
+		System.out.println("A is created");
+	}
+	
+	public void m1() {
+		System.out.println("m1() of A is called");
+	}
+
+	public B getB() {
+		return b;
+	}
+
+	public void setB(B b) {
+		this.b = b;
+	}
+
+	public int getI() {
+		return i;
+	}
+
+	public void setI(int i) {
+		this.i = i;
+	}
+
+}

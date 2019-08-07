@@ -1,0 +1,67 @@
+package com.goodsteam;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletContext;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class display
+ */
+@WebServlet("/display")
+public class display extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public display() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		//response.getWriter().append("Served at: ").append(request.getContextPath());
+		ServletContext servletContext = getServletContext();
+		Double count= (Double) servletContext.getAttribute("count");
+        Double sum =(Double) servletContext.getAttribute("sum");
+        Double avg =(Double) servletContext.getAttribute("avg");
+        
+        
+        PrintWriter writer = response.getWriter();
+
+        // build HTML code
+        String htmlRespone = "<html>";
+        htmlRespone +="<head>";
+        htmlRespone += "<style>";
+        htmlRespone +="div {";
+        htmlRespone += "border: 5px solid grey;";
+        htmlRespone += "padding: 40px;";
+        htmlRespone += "margin: 20px;";
+        htmlRespone += "}";
+        htmlRespone +="</style>";
+        htmlRespone +="<div>";
+        htmlRespone += "<p align =center> Average feedback for the Pressure cooker Product based on feedback from " +Math.round(count)+" users is </p>";
+        htmlRespone += "<h1 align=center>"+ avg + "</h1>";
+        htmlRespone +="</div>";
+        htmlRespone += "</html>";
+        writer.println(htmlRespone);
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+			
+	        // return response
+	}
+
+}
