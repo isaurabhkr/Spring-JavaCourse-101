@@ -1,0 +1,19 @@
+package com.rkit;
+import java.lang.reflect.Proxy;
+
+
+public class ProductFactory {
+	public static Product newProduct(String className) throws InstantiationException, IllegalAccessException, ClassNotFoundException{
+		//TODO 1 
+		//Create Instance of Product for given className
+		Class p = Class.forName("com.rkit."+className);
+		Product product = (Product) p.newInstance();
+		//TODO 2
+		//Create Proxy and pass DescountAspect object to it.
+		//DiscountAspect needs logger aspect.So pass Logger apsct to DiscountAspct constructor
+		
+		Product ob= (Product) java.lang.reflect.Proxy.newProxyInstance(product.getClass().getClassLoader(),product.getClass().getInterfaces(), new DiscountAspect(new LoggerAspect(product),product));
+		return ob;
+	}
+
+}

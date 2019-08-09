@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="test"/>
+	<classpathentry kind="lib" path="/Users/vivekkulkarni/Documents/Spring4.2/ThirdPartyLibs/aopalliance-1.0.jar"/>
+	<classpathentry kind="lib" path="/Users/vivekkulkarni/Documents/Spring4.2/ThirdPartyLibs/aspectjrt-1.6.11.jar"/>
+	<classpathentry kind="lib" path="/Users/vivekkulkarni/Documents/Spring4.2/ThirdPartyLibs/aspectj-1.8.7.jar"/>
+	<classpathentry kind="lib" path="/Users/vivekkulkarni/Documents/Spring4.2/ThirdPartyLibs/aspectjweaver.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/SpringLib_4.2.3"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/ThirdPartLibs"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

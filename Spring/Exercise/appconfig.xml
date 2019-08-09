@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+ <util:properties id="jdbcProperties" location="jdbc.properties" />
+<bean id="configBank" class="BankConfig" >
+<property name="url" value=${jdbcProperties.oracleURL}/>
+<property name="username" value=${jdbcProperties.oracleUser}/>
+</bean>
+
+<bean id="bankService" class="BankImpl" scope="prototype">
+    <constructor-arg >
+       <bean class="bank.server.internal.AccountRepositoryImpl" />
+    </constructor-arg>
+    <constructor-arg name="acctTypes">
+       <list>
+          <ref bean="currentAccount" />
+          <ref bean="saving" />
+          <ref bean="loan" />
+
+       </list>
+    </constructor-arg>
+  </bean>
+
+<bean id="acctRepo" class="AccountRepository" scope="prototype" />
+<constructor-arg ref="dataSource"/>
+
+<bean id="current" class="CurentAccount" >
+   <constructor-arg name="custName" value="Ramakrsihna IT" />
+   <constructor-arg  name="balance" value="10000000" />
+   <property name="acctNo" value ="123456789" />
+</bean>
+
+<bean id="dataSource" class="DriverManagerDataSource">
+<constructor-arg name=#{configBank.url} />
+<constructor-arg name=#{configBank.username} />
+<constructor-arg name=#{configBank.password} />
+<property name="DriverClassName" value={configBank.setDriverClassName}>
+</bean>
+</beans>
