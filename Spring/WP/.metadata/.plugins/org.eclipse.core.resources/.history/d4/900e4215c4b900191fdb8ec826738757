@@ -1,0 +1,17 @@
+package com.hsbc;
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class B {
+
+	C c;
+
+	public B(C c) {
+		super();
+		System.out.println("B is created");
+
+		this.c = c;
+	}
+	
+}

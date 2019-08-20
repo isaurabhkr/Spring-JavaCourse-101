@@ -1,0 +1,30 @@
+package bank.server.internal;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.AbstractApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import bank.server.Bank;
+
+public class Test {
+
+	public static void main(String[] args) {
+		ApplicationContext ctx = new ClassPathXmlApplicationContext("application-list.config.xml");
+		CurentAccount b =(CurentAccount) ctx.getBean("current");
+		System.out.println(b);
+		((AbstractApplicationContext) ctx).close();
+		
+		ApplicationContext ctx = new ClassPathXmlApplicationContext("application-Map.config.xml");
+		 b =(CurentAccount) ctx.getBean("current");
+		System.out.println(b);
+		((AbstractApplicationContext) ctx).close();
+		
+		ApplicationContext ctx = new ClassPathXmlApplicationContext("application-Set.config.xml");
+		 b =(CurentAccount) ctx.getBean("current");
+		System.out.println(b);
+		((AbstractApplicationContext) ctx).close();
+		
+
+	}
+
+}

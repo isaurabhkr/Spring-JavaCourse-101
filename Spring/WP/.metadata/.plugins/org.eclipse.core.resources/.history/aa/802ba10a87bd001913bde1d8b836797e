@@ -1,0 +1,43 @@
+package com.hsbc;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+
+@Controller
+
+public class HelloController {
+	@RequestMapping("/hello")
+	public String sayHello()
+	{
+		return "hello";
+	}
+	
+	@RequestMapping("/hello/{name}")
+	public String sayHello(@PathVariable(value="name") String name, Model m)
+	{
+		m.addAttribute("Name",name);
+		return "hello";
+	}
+	
+	@RequestMapping("/emphello")
+	public String showEmployeeForm(@RequestParam("first_name") String first_name,@RequestParam("last_name") String last_name,@RequestParam("empId") String empId, Model m) {
+		m.addAttribute("empId",empId);
+		m.addAttribute("first_name",first_name);
+		m.addAttribute("last_name",last_name);
+		return "home";
+	}
+	@RequestMapping("/namaste")
+	public String sayNamaste()
+	{
+		return "namaste";
+	}
+	@RequestMapping("/form")
+	public String sayHie()
+	{
+		return "form";
+	}
+}

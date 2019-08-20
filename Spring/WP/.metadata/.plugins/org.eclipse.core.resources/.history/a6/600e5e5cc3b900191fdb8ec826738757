@@ -1,0 +1,9 @@
+package com.hsbc;
+
+public class D {
+	D()
+	{
+		System.out.println("D is created");
+	}
+
+}

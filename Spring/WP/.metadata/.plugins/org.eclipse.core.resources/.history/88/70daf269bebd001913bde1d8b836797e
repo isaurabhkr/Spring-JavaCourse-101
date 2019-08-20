@@ -1,0 +1,35 @@
+package com.example.demo;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+@Service
+public class Accountservice {
+	
+	List<Account> accounts = new ArrayList();
+	{
+		accounts.add(new Account("Vivek","Kulkarni",10000, new Address("Pune",421001),1234));
+		accounts.add(new Account("Sapna","Kulkarni",12300, new Address("Pune",421005),12345));
+		accounts.add(new Account("Kiran","Kulkarni",252852, new Address("Pune",421003),12346));
+	}
+	public Account findAccountBY(int id) {
+		for(Account acct: accounts)
+		{
+			if(acct.getAccno()==id)
+				return acct;
+		}
+		return null;
+		
+	}
+	public List<Account> getallAccount() {
+		for(Account acct: accounts)
+		{
+			if(acct.getAccno()==id)
+				return acct;
+		}
+		return null;
+		
+	}
+}

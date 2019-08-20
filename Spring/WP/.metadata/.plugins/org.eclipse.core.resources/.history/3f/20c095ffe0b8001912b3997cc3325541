@@ -1,0 +1,10 @@
+package bank.server.internal;
+
+import bank.iserver.internal.service.AccountRepository;
+import bank.server.Bank;
+
+public class BankFactory {
+	
+	//ToDO provide factory method that takes Accountrepo as argument
+
+}

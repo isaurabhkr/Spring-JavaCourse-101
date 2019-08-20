@@ -1,0 +1,25 @@
+package com.rkit;
+import java.lang.reflect.InvocationHandler;
+import java.lang.reflect.Method;
+import java.util.logging.Logger;
+
+
+public class DiscountAspect  {
+	InvocationHandler handler;
+	Product product;
+	
+	public DiscountAspect(InvocationHandler handler, Product product) {
+		super();
+		this.handler = handler;
+		this.product = product;
+	}
+
+	//TODO#1 Fix this compilation problem by implementing InvocationHandler interface
+	@Override
+	public Object invoke throws Throwable(Object proxy, Method method, Object[] args)  {
+		Logger LOGGER = LoggerFactory.getLogger(DynamicInvocationHandler.class);
+		LOGGER.info("Invoked method: {}", method.getName());
+		return null;
+	}
+
+}

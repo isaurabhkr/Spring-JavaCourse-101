@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<bean id="current" class="bank.server.internal.CurentAccount" >
+   <constructor-arg name="custName" value="Vivek Kulkarni" />
+   <constructor-arg  name="balance" value="10000000" />
+   <property name="acctNo" value ="12345" />
+</bean>
+<bean id="saving" class="bank.server.internal.SavingsType" >
+   <constructor-arg name="custName" value="Vivek Kulkarni" />
+   <constructor-arg  name="interestRate" value="3.5" />
+</bean>
+<bean id="loan" class="bank.server.internal.LoanAccount" >
+   <constructor-arg name="loanType" value="HomeLoan" />
+   <constructor-arg  name="loanTerm" value="25" />
+   <property name="rateOfInterest" value="10.7" />
+</bean>
+
+<bean id="bankService" scope="singleton" abstract="true">
+<constructor-arg ref="acctRepo"/>
+ <constructor-arg>
+       <props>
+           <prop key="CURRENT ACCOUNT" >current </prop>
+           <prop key="SAVING ACCOUNT">saving</prop>
+           <prop key="LOAN ACCOUNT" >loan </prop>
+       </props>
+</constructor-arg>
+</bean> 
+<bean id="acctRepo" class="bank.server.internal.AccountRepositoryImpl" scope="prototype" />
+  
+<bean id="axis" class="bank.server.internal.AXIS" scope="singleton" parent="bankService" >
+<constructor-arg name="bankName" value="Axis Bank" />
+<constructor-arg name="branchCode" value="1234" />
+</bean>
+
+<bean id="sbi" class="bank.server.internal.SBI" scope="singleton" parent="bankService">
+<constructor-arg name="bankName" value="State Bank of India" />
+<constructor-arg name="branchCode" value="12345" />
+</bean>
+</beans>

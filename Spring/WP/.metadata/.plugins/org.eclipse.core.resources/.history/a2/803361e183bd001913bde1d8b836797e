@@ -1,0 +1,28 @@
+package com.hsbc;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+@RequestMapping("/greeting")
+public class HelloController {
+	@RequestMapping("/hello")
+	public String sayHello()
+	{
+		return "hello";
+	}
+	
+	@RequestMapping("/hello/{name}")
+	public String sayHello(@PathVariable(value="name") String name, Model m)
+	{
+		m.addAttribute("Name",name);
+		return "hello";
+	}
+	@RequestMapping("/namaste")
+	public String sayNamaste()
+	{
+		return "namaste";
+	}
+}

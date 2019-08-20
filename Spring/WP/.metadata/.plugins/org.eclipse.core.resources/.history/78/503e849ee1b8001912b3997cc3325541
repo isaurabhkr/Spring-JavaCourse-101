@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+
+  <!--  Here constructor-arg actually is an argument to the factory-method and not a constructor arg for BankImpl -->
+
+<bean id="bankService" factory-method="getInstance" class="bank.server.internal.BankImpl" lazy-init="true" >
+<constructor-arg ref="acctRepo"/>
+<constructor-arg name="branchCode" value="12345"/>
+</bean>
+<bean id="acctRepo" class="bank.server.internal.AccountRepositoryImpl" scope="prototype" />
+  
+
+</beans>

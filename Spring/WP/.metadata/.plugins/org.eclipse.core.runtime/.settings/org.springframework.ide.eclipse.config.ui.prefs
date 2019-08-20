@@ -1,0 +1,13 @@
+//com.springsource.config.ui.prefs.activePageIndex\:/HSBC_MVC_Project/WebContent/WEB-INF/config/app-config.xml=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<activePage index\="0"/>
+//com.springsource.config.ui.prefs.activePageIndex\:/Project_MedLine_Day1_04_Factory-Method_ToDo/src/application-config.xml=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<activePage index\="0"/>
+//com.springsource.config.ui.prefs.activePageIndex\:/Project_MedLine_Day1_05_FactoryBean_POJO/src/application-config.xml=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<activePage index\="0"/>
+//com.springsource.config.ui.prefs.activePageIndex\:/Project_MedLine_Day1_06_Factory-BeanImpl/src/application-config.xml=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<activePage index\="0"/>
+//com.springsource.config.ui.prefs.activePageIndex\:/Project_MedLine_Day1_07_Collections/src/application-Map.config.xml=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<activePage index\="0"/>
+//com.springsource.config.ui.prefs.activePageIndex\:/Project_MedLine_Day1_07_Collections/src/application-Set.config.xml=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<activePage index\="0"/>
+//com.springsource.config.ui.prefs.activePageIndex\:/Project_MedLine_Day1_07_Collections/src/application-list.config.xml=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<activePage index\="0"/>
+//com.springsource.config.ui.prefs.activePageIndex\:/Project_MedLine_Day1_08_Properties/src/application-Props.config.xml=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<activePage index\="0"/>
+//com.springsource.config.ui.prefs.activePageIndex\:/Project_MedLine_Day1_11_Advanced_Mapping01_SubBean/src/application-Props.config.xml=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<activePage index\="0"/>
+//com.springsource.config.ui.prefs.activePageIndex\:/Project_MedLine_Day1_12_Advanced_Mapping02_SubBean_OnlyProperties/src/application-Props.config.xml=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<activePage index\="0"/>
+//com.springsource.config.ui.prefs.activePageIndex\:/Project_MedLine_Day1_13_More_Advanced_Mapping_MethodInjection/src/application-config.xml=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<activePage index\="0"/>
+//com.springsource.config.ui.prefs.activePageIndex\:/Project_MedLine_Day1_14_More_Advanced_Mapping_GetterMethodInjection/src/application-config.xml=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<activePage index\="0"/>
+eclipse.preferences.version=1

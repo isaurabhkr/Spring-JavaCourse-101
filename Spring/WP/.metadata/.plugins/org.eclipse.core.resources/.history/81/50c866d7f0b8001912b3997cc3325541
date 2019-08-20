@@ -1,0 +1,19 @@
+package bank.server.internal;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.AbstractApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import bank.server.Bank;
+
+public class Test {
+
+	public static void main(String[] args) {
+		ApplicationContext ctx = new ClassPathXmlApplicationContext("application-list.config.xml");
+		AccountRepositoryImpl b =(AccountRepositoryImpl) ctx.getBean("current");
+		
+		((AbstractApplicationContext) ctx).close();
+
+	}
+
+}

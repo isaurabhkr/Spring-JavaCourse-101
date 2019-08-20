@@ -1,0 +1,18 @@
+package com.hsbc;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
+public class B {
+
+	C c;
+	@Autowired
+	public B(C c) {
+		super();
+		System.out.println("B is created");
+
+		this.c = c;
+	}
+	
+}

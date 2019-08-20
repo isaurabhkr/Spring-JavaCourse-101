@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;Test.java&apos; to &apos;bank.server.internal.SBI.java&apos;&#x0D;&#x0A;- Original project: &apos;Project_MedLine_Day1_11_Advanced_Mapping01_SubBean&apos;&#x0D;&#x0A;- Destination element: &apos;bank.server.internal.SBI.java&apos;&#x0D;&#x0A;- Original element: &apos;bank.server.internal.Test.java&apos;" description="Copy compilation unit" destination="=Project_MedLine_Day1_12_Advanced_Mapping02_SubBean_OnlyProperties/src&lt;bank.server.internal{SBI.java" element1="/src&lt;bank.server.internal{Test.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1565170610145" units="1" version="1.0"/>
+</session>

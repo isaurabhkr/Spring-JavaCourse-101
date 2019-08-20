@@ -1,0 +1,4 @@
+oracleDriver=org.apache.derby.jdbc.EmbeddedDriver
+oracleURL=jdbc:derby:C:\Work\HSBC\Derby\mydB
+oracleUser=system
+oraclePassword=system

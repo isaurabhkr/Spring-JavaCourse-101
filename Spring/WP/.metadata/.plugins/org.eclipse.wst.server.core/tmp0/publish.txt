@@ -1,0 +1,7 @@
+#Tomcat publish data
+#Tue Aug 13 10:31:28 IST 2019
+org.eclipse.jst.jee.server\:/binary\:C\:\\Users\\Administrator\\Documents\\workspace-sts-3.9.9.RELEASE\\HSBC_MVC_Project\\WebContent\\WEB-INF\\lib\\spring-web-4.2.5.RELEASE.jar=C\:\\sts-bundle\\pivotal-tc-server\\instances\\base-instance\\wtpwebapps\\HSBC_MVC_Project\\WEB-INF\\lib\\spring-web-4.2.5.RELEASE.jar
+org.eclipse.jst.jee.server\:/binary\:C\:\\Users\\Administrator\\Documents\\workspace-sts-3.9.9.RELEASE\\HSBC_MVC_Project\\WebContent\\WEB-INF\\lib\\tomcat-websocket.jar=C\:\\sts-bundle\\pivotal-tc-server\\instances\\base-instance\\wtpwebapps\\HSBC_MVC_Project\\WEB-INF\\lib\\tomcat-websocket.jar
+org.eclipse.jst.jee.server\:/binary\:C\:\\Users\\Administrator\\Documents\\workspace-sts-3.9.9.RELEASE\\HSBC_MVC_Project\\WebContent\\WEB-INF\\lib\\jasper.jar=C\:\\sts-bundle\\pivotal-tc-server\\instances\\base-instance\\wtpwebapps\\HSBC_MVC_Project\\WEB-INF\\lib\\jasper.jar
+org.eclipse.jst.jee.server\:HSBC_MVC_Project=C\:\\sts-bundle\\pivotal-tc-server\\instances\\base-instance\\wtpwebapps\\HSBC_MVC_Project
+org.eclipse.jst.jee.server\:/binary\:C\:\\Users\\Administrator\\Documents\\workspace-sts-3.9.9.RELEASE\\HSBC_MVC_Project\\WebContent\\WEB-INF\\lib\\spring-web-4.2.5.RELEASE-sources.jar=C\:\\sts-bundle\\pivotal-tc-server\\instances\\base-instance\\wtpwebapps\\HSBC_MVC_Project\\WEB-INF\\lib\\spring-web-4.2.5.RELEASE-sources.jar

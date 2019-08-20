@@ -1,0 +1,39 @@
+package com.hsbc;
+
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
+
+@Component
+public class A {
+	B b;
+	@Value("100") int i;
+	@Value("#{b.getString()}") String s;
+	public A() {
+		//super();
+		System.out.println("A created using default constructor");
+	}
+	@Autowired
+	public A(B b) {
+		//super();
+		System.out.println("A is created");
+		this.b = b;
+	}
+	
+	@Autowired
+	public void setD(D d) {
+		System.out.println("SetD got D");
+	}
+	
+	@PostConstruct
+	public void init(){
+		System.out.println("Init "+ this.i);
+	}
+	@PreDestroy
+	public void destroy(){
+		System.out.println("Destroy");
+	}
+}

@@ -1,0 +1,12 @@
+package com.hsbc;
+
+public class A {
+	B b;
+
+	public A(B b) {
+		super();
+		System.out.println("A is created");
+		this.b = b;
+	}
+	
+}

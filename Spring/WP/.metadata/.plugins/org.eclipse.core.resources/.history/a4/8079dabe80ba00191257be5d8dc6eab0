@@ -1,0 +1,68 @@
+package bank.server.internal;
+
+import java.util.ArrayList;
+import java.util.Collection;
+
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.ImportResource;
+import org.springframework.jdbc.datasource.DriverManagerDataSource;
+
+import bank.iserver.internal.service.AccountRepository;
+import bank.iserver.internal.service.AccountService;
+import bank.server.Bank;
+
+//TODO 1
+//Enable JavaConfig
+//TODO2
+//import "test-infrastructure-Java_Based_config.xml"
+@ImportResource("test-infrastructure-Java_Based_config.xml")
+@Configuration
+public class BankConfig {
+
+	//TODO3 use @Value() annotation to initialize all properties from jdbcProperties file
+	private  @Value("${dataSource.url}") String url;
+	private  @Value("${dataSource.username}") String username;
+	private  @Value("${dataSource.password}") String password;
+	private  @Value("${dataSource.driverClassName}") String driverClassName;
+	
+	@Bean
+	//TODO4 make this method as bean registration method using annotation @Bean
+	Bank  bankService(){
+		Collection<AccountService> accts = new ArrayList<AccountService>();
+		accts.add(currentAccount());
+		accts.add(loan());
+		accts.add(saving());
+		return new BankImpl(accountRepository(),accts);
+	}
+	@Bean(name="acctRepo")
+	AccountRepository accountRepository(){
+		//TODO 5 return instance of account repository by injecting dataSource
+		return new AccountRepositoryImpl(dataSource());
+	}
+	@Bean(name="current")
+	AccountService currentAccount(){
+		CurentAccount acct= new CurentAccount("Ramkrishna IT",1000000);
+		acct.setAcctNo(123456789);
+		return acct;
+	}
+	@Bean(name="saving")
+	AccountService saving(){
+		SavingsType saving = new SavingsType("vivek Kulkarni");
+		saving.setInterestRate(10.5f);
+		return saving;
+	}
+	@Bean(name="loan")
+	AccountService loan(){
+		LoanAccount loan = new LoanAccount("HousingLoan", 15);
+		loan.setRateOfInterest(11.5f);
+		return loan;
+	}
+	@Bean
+	public  DriverManagerDataSource dataSource() {
+		DriverManagerDataSource dataSource = new DriverManagerDataSource(url, username, password);
+		dataSource.setDriverClassName(driverClassName);
+		return dataSource;
+	}
+}

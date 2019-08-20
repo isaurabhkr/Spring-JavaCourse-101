@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;Test.java&apos; to &apos;Project_MedLine_Day1_14_More_Advanced_Mapping_GetterMethodInjection/src/com.rits&apos;&#x0D;&#x0A;- Original project: &apos;Project_MedLine_Day1_13_More_Advanced_Mapping_MethodInjection&apos;&#x0D;&#x0A;- Destination element: &apos;Project_MedLine_Day1_14_More_Advanced_Mapping_GetterMethodInjection/src/com.rits&apos;&#x0D;&#x0A;- Original element: &apos;com.rits.Test.java&apos;" description="Copy compilation unit" destination="=Project_MedLine_Day1_14_More_Advanced_Mapping_GetterMethodInjection/src&lt;com.rits" element1="/src&lt;com.rits{Test.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1565172638094" units="1" version="1.0"/>
+</session>

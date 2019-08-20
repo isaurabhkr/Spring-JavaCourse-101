@@ -1,0 +1,14 @@
+package com.hsbc;
+
+public class C {
+	D d;
+
+	public C(D d) {
+		super();
+		System.out.println("C is created");
+
+		this.d = d;
+	}
+	
+
+}

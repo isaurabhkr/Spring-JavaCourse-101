@@ -1,0 +1,35 @@
+package com.rkit;
+import java.lang.reflect.InvocationHandler;
+import java.lang.reflect.Method;
+import java.util.logging.Logger;
+
+
+public class DiscountAspect implements InvocationHandler{
+	InvocationHandler handler;
+	Product product;
+
+	public DiscountAspect(InvocationHandler handler, Product product) {
+		super();
+		this.handler = handler;
+		this.product = product;
+	}
+
+	//TODO#1 Fix this compilation problem by implementing InvocationHandler interface
+	//TODO#2 continue call chain by invoking method of the logger aspect(next in the chain)
+	//TDOO#3 obj is the returned value of the call in 
+	//TODO#2 make sure you apply discount of 25% only if
+	// obj is of type Integer
+
+	@Override
+	public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+		Logger logger = Logger.getLogger(DiscountAspect.class.getName());
+		logger.info("Invoked method: {} "+ method.getName());
+		Object retVal = method.invoke(product, args);
+		
+		if(retVal instanceof Integer) 
+			return Math.round((Integer)retVal*.75);
+		return retVal;
+
+	}
+
+}

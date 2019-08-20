@@ -1,0 +1,13 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Hello</title>
+</head>
+<body bgcolor="yellow">
+<marquee></marquee><h1> Welcome to the page</h1></marquee>
+<h2> Mr/Ms ${first_name} ${last_name} : ${empId}!</h2>
+</body>
+</html>

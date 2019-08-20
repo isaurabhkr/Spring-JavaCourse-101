@@ -1,0 +1,18 @@
+package com.rits;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class Test {
+
+	public static void main(String[] args) {
+		ApplicationContext ctx = new ClassPathXmlApplicationContext("application-config.xml");
+		Magician m =(Magician) ctx.getBean("magician");
+		System.out.println(m);
+
+		SavingsType b2 =(SavingsType) ctx.getBean("saving");
+		System.out.println(b2);
+
+	}
+
+}
